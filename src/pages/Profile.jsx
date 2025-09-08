@@ -14,7 +14,7 @@ export const Profile = () => {
  const [user, setUser] = useState(null)
  const [posts, setPost] = useState([])
  const [activeTab, setActiveTab] = useState('posts')
- const [showEdit, setShowEdit] = useState()
+ const [showEdit, setShowEdit] = useState(false)
 
  const fetchUser = async () => {
   setUser(dummyUserData)
@@ -78,11 +78,11 @@ export const Profile = () => {
                 }
               </div>
             )}
-
        </div>
-      </div>
-      {/* Edit Profile Modal */}
+       {/* Edit Profile Modal */}
       {showEdit && <ProfileModal setShowEdit={setShowEdit} />}
+      </div>
     </div>
+    
   ) : (<Loading />)
 }
